@@ -29,15 +29,15 @@ if ! command -v bd &>/dev/null; then
       brew install beads
     else
       # Direct binary install for macOS
-      curl -L https://github.com/cceckman/beads/releases/latest/download/beads-darwin-amd64 -o /usr/local/bin/bd
+      curl -L https://github.com/steveyegge/beads/releases/latest/download/beads-darwin-amd64 -o /usr/local/bin/bd
       chmod +x /usr/local/bin/bd
     fi
   elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
     # Linux - direct binary install
-    curl -L https://github.com/cceckman/beads/releases/latest/download/beads-linux-amd64 -o /usr/local/bin/bd
+    curl -L https://github.com/steveyegge/beads/releases/latest/download/beads-linux-amd64 -o /usr/local/bin/bd
     chmod +x /usr/local/bin/bd
   else
-    echo "Unsupported OS. Please install beads manually from: https://github.com/cceckman/beads"
+    echo "Unsupported OS. Please install beads manually from: https://github.com/steveyegge/beads"
     exit 1
   fi
 
@@ -52,7 +52,7 @@ fi
 ```
 
 **If installation fails:**
-- Tell the user: "I need to install Beads for issue tracking. Please run: `brew install beads` (macOS) or visit https://github.com/cceckman/beads for installation instructions."
+- Tell the user: "I need to install Beads for issue tracking. Please run: `brew install beads` (macOS) or visit https://github.com/steveyegge/beads for installation instructions."
 - Do not proceed with beads commands until it's installed
 
 ### Project Initialization
@@ -501,7 +501,7 @@ bd sync  # Manually sync if needed
    - Run the installation sequence from the Installation & Initialization section
    - If automatic installation fails, ask user to install manually:
      - macOS: `brew install beads`
-     - Linux: Download from https://github.com/cceckman/beads/releases
+     - Linux: Download from https://github.com/steveyegge/beads/releases
    - Verify with: `command -v bd`
 
 2. **"Database not found"**
@@ -511,7 +511,7 @@ bd sync  # Manually sync if needed
 
 3. **"Permission denied" during installation**
    - Installation requires sudo for `/usr/local/bin`
-   - Tell user: "I need sudo access to install beads. Please run: `sudo curl -L https://github.com/cceckman/beads/releases/latest/download/beads-darwin-amd64 -o /usr/local/bin/bd && sudo chmod +x /usr/local/bin/bd`"
+   - Tell user: "I need sudo access to install beads. Please run: `sudo curl -L https://github.com/steveyegge/beads/releases/latest/download/beads-darwin-amd64 -o /usr/local/bin/bd && sudo chmod +x /usr/local/bin/bd`"
 
 4. **"Cycle detected in dependencies"**
    - Dependencies must form a DAG (no cycles)
